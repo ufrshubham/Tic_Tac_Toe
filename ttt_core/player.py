@@ -2,15 +2,9 @@ from enum import Enum
 
 # This is a map of positions on board to corresponding co-ordinates
 POSITIONS = {
-    1: (0, 0),
-    2: (0, 1),
-    3: (0, 2),
-    4: (1, 0),
-    5: (1, 1),
-    6: (1, 2),
-    7: (2, 0),
-    8: (2, 1),
-    9: (2, 2)
+    1: (0, 0), 2: (0, 1), 3: (0, 2),
+    4: (1, 0), 5: (1, 1), 6: (1, 2),
+    7: (2, 0), 8: (2, 1), 9: (2, 2)
 }
 
 
@@ -21,6 +15,7 @@ class Player:
         """Creates a player object with status set to SPAWNED and with zero positions."""
         self.__status = Status.SPAWNED
         self.__positions = []
+        self.__symbol = ""
 
     @property
     def status(self):
@@ -40,6 +35,16 @@ class Player:
     def mark(self, value):
         """This method will add given value to players position list."""
         self.__positions.append(value)
+
+    @property
+    def symbol(self):
+        """Returns player marker symbol."""
+        return self.__symbol
+
+    @symbol.setter
+    def symbol(self, value):
+        """Sets player's maker symbol."""
+        self.__symbol = value
 
 
 class Status(Enum):
