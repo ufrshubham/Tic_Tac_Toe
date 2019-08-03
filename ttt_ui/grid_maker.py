@@ -67,11 +67,3 @@ class Grid(Tk):
         button = self.index_to_button[grid_index]
         button.config(text=symbol, state=DISABLED)
 
-
-def main():
-    grid = Grid()
-    grid.mainloop()
-
-
-if __name__ == '__main__':
-    main()
